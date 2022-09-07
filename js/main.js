@@ -5,20 +5,20 @@ $(window).on("scroll",function(e){
     let scroll_val = $(window).scrollTop()
     console.log(scroll_val); // 스크롤이 얼마나 내려가는지 확인
     // 메인캐릭터
-    $("#im_seoa").css({"margin-top": $(this).scrollTop()-150, "opacity":"1","z-index":"7000"});
+    $("#im_bombi").css({"margin-top": $(this).scrollTop()-150, "opacity":"1","z-index":"7000"});
     if($(this).scrollTop()>1050){
-        $("#im_seoa").css({"margin-top": $(this).scrollTop(), "opacity":"0", "z-index":"0"});
+        $("#im_bombi").css({"margin-top": $(this).scrollTop(), "opacity":"0", "z-index":"0"});
     } else if($(this).scrollTop()<900 && $(this).scrollTop()>420){
         //왼쪽으로 옮기기
-        $("#im_seoa").css({"margin-left": -$(this).scrollTop()+400});
+        $("#im_bombi").css({"margin-left": -$(this).scrollTop()+400});
     } else if($(this).scrollTop()<500){
-        $("#im_seoa").css({"margin-left": 0});
+        $("#im_bombi").css({"margin-left": 0});
     }
-    //산호초
-    $(".coral_orange").css({"margin-left": -$(this).scrollTop()});
-    $(".coral_green").css({"margin-left": -$(this).scrollTop()});
-    $(".coral_red").css({"margin-left": -$(this).scrollTop()});
-    $(".coral_yellow").css({"margin-left": $(this).scrollTop()});
+    // 커튼
+    // $(".curtain01").css({"margin-top": -$(this).scrollTop()});
+    $(".curtain02").css({"margin-left": -$(this).scrollTop()});
+    $(".curtain03").css({"margin-right": -$(this).scrollTop()});
+    $(".main_index_area").css({"margin-right": -$(this).scrollTop()});
     $(".coral_pink").css({"margin-left": $(this).scrollTop()});
     $(".coral_purple").css({"margin-left": $(this).scrollTop()});
     //메인인포 위에서 아래로 효과(코드로 세상과 소통하는~~ + 이미지)
@@ -38,18 +38,18 @@ $(window).on("scroll",function(e){
     }
     //백그라운드컬러 바뀌게 하는 효과
     if($(this).scrollTop()>550 && $(this).scrollTop()<1200){
-        $(".main_information_area").css({"background-color":"aliceblue", "transition":"0.5s"})
-        $(".sea_level").css({"background-color":"aliceblue", "transition":"0.5s"})
+        $(".main_information_area").css({"background-color":"#333", "transition":"0.5s"})
+        $(".bg_level").css({"background-color":"aliceblue", "transition":"0.5s"})
         $(".info_area").css({"background-color":"aliceblue", "transition":"0.5s"})
         $(".send_message_box").css({"background-color":"aliceblue", "transition":"0.5s"})
     }else if($(this).scrollTop()>=1200){
         $(".main_information_area").css({"background-color":"#f5f5f5", "transition":"0.5s"})
-        $(".sea_level").css({"background-color":"#f5f5f5", "transition":"0.3s"})
+        $(".bg_level").css({"background-color":"#f5f5f5", "transition":"0.3s"})
         $(".info_area").css({"background-color":"#f5f5f5", "transition":"0.5s"})
         $(".send_message_box").css({"background-color":"#f5f5f5", "transition":"0.5s"})
     } else{
-        $(".main_information_area").css({"background-color":"#000dc1", "transition":"0.5s"})
-        $(".sea_level").css({"background-color":"#000dc1", "transition":"0.5s"})
+        $(".main_information_area").css({"background-color":"#333", "transition":"0.5s"})
+        $(".bg_level").css({"background-color":"#333", "transition":"0.5s"})
     }
 
 })
@@ -88,11 +88,11 @@ $('.main_index_string').on("click",(e)=>{
         case "HOME":
             $(window).scrollTop(0);
         break;
-        case "HELLO":
-            $(window).scrollTop(1030);
-        break;
         case "ABOUT ME":
             $(window).scrollTop(2125);
+        break;
+        case "SKILLS":
+            $(window).scrollTop(2500);
         break;
         case "PORTFOLIO":
             $(window).scrollTop(3422);
@@ -107,6 +107,9 @@ $('.main_info_menu').on("click", (e)=>{
         break;
         case "ABOUT ME":
             $(window).scrollTop(2125);
+        break;
+        case "SKILLS":
+            $(window).scrollTop(2500);
         break;
         case "PORTFOLIO":
             $(window).scrollTop(3422);

@@ -5,7 +5,7 @@
 html, body {
   width: 100%;
   background-color: #333;
-  color: #f2f2f2;
+  color: #92df92;
   text-align: center;
   scroll-behavior: smooth;
   font-family: "Gowun Dodum", sans-serif;
@@ -17,14 +17,16 @@ body::-webkit-scrollbar {
 }
 
 .main_area {
+  margin: 0;
   width: 100%;
   height: 4375px;
   position: relative;
   overflow: hidden;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .main_area_header {
+  top: 0;
   width: 100%;
   height: 300px;
   font-size: 70px;
@@ -33,9 +35,9 @@ body::-webkit-scrollbar {
   z-index: 5500;
 }
 .main_area_header .head_img {
-  width: 1000px;
+  width: 250px;
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 50%;
   transform: translate(-55%);
   -webkit-transform: translate(-55%);
@@ -48,7 +50,7 @@ body::-webkit-scrollbar {
   height: 50px;
   position: absolute;
   z-index: 5000;
-  top: 260%;
+  top: 160%;
   left: 50%;
   font-size: 25px;
   font-weight: 500;
@@ -63,7 +65,7 @@ body::-webkit-scrollbar {
 .main_area_header .arrow {
   position: absolute;
   z-index: 5000;
-  top: 295%;
+  top: 200%;
   color: aliceblue;
   transform: translate(-50%, -50%);
   transform: rotate(45deg);
@@ -73,15 +75,17 @@ body::-webkit-scrollbar {
   -o-transform: rotate(45deg);
 }
 .main_area_header .main_index_area {
+  margin: 0;
+  background: #000dc1;
   width: 400px;
   height: 400px;
   position: absolute;
   z-index: 2000;
   text-align: right;
-  left: 110%;
-  top: 118%;
+  right: -1000%;
+  top: 300%;
   color: aliceblue;
-  font-family: "Indie Flower", cursive;
+  font-family: "Exo 2", sans-serif;
   font-weight: 300;
   font-size: 4rem;
   transition: 0.5s;
@@ -100,18 +104,19 @@ body::-webkit-scrollbar {
   height: 20%;
   text-shadow: 1px 1px #09094c;
   cursor: pointer;
-  line-height: 80px;
+  line-height: 2;
 }
 .main_area_header .main_index_area .main_index_string:hover {
   text-shadow: 3px 3px #09094c;
 }
 
-.im_seoa {
+.im_bombi {
+  /* background: #00b500; */
   width: 350px;
-  height: 400px;
+  /* height: 400px; */
   position: absolute;
   z-index: 7000;
-  top: 15%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, 0);
   transition: 0.5s;
@@ -128,7 +133,7 @@ body::-webkit-scrollbar {
   font-size: 30px;
 }
 
-.im_seoa_info {
+.im_bombi_info {
   width: 300px;
   height: 100px;
   border-radius: 10px;
@@ -148,20 +153,22 @@ body::-webkit-scrollbar {
   padding: 20px;
   line-height: 30px;
 }
-.im_seoa_info img {
+.im_bombi_info img {
   width: 100px;
 }
-.im_seoa_info p {
+.im_bombi_info p {
   text-align: left;
   font-size: 25px;
   font-family: "Exo 2", sans-serif;
   font-weight: 700;
 }
 
-.im_seoa_char {
-  width: 350px;
-  height: 400px;
+
+.im_bombi_char {
+  /* width: 350px; */
+  width: 500px;
   position: absolute;
+  left: 50%;
   z-index: 5000;
   transform: translate(-50%);
   -webkit-transform: translate(-50%);
@@ -170,18 +177,31 @@ body::-webkit-scrollbar {
   -o-transform: translate(-50%);
 }
 
-.sea_level {
+.im_bombi_char img {
+  width: 50%;
+}
+
+.im_bombi_char .magic {
+  margin-left: -50px;
+}
+
+.bg_level {
   width: 100%;
   height: 2000px;
   position: relative;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   overflow: hidden;
 }
 
-.corals_area {
-  height: 55%;
+.curtain_area {
+  position: relative;
+  /* top: -10px; */
+  height: 65%;
+  margin: 0;
 }
-.corals_area .coral_orange {
+
+/* .curtain_area .curtain01 {
+  width: 100%;
   height: 55%;
   top: 0;
   left: 0%;
@@ -192,11 +212,12 @@ body::-webkit-scrollbar {
   -ms-transition: 3s;
   -o-transition: 3s;
   z-index: 5000;
-}
-.corals_area .coral_red {
+} */
+.curtain_area .curtain02 {
+  width: 30%;
   height: 55%;
-  top: 5%;
-  left: 12%;
+  top: 0%;
+  left: 0%;
   position: absolute;
   transition: 2s;
   -webkit-transition: 2s;
@@ -205,19 +226,21 @@ body::-webkit-scrollbar {
   -o-transition: 2s;
   z-index: 5000;
 }
-.corals_area .coral_green {
+.curtain_area .curtain03 {
+  width: 30%;
   height: 55%;
   top: 0;
-  left: 15%;
+  right: 0;
   position: absolute;
-  transition: 0.8s;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
+  transition: 2s;
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -ms-transition: 2s;
+  -o-transition: 2s;
   z-index: 5000;
 }
-.corals_area .coral_yellow {
+/* 
+.curtain_area .coral_yellow {
   height: 55%;
   top: 0;
   left: 40%;
@@ -229,7 +252,7 @@ body::-webkit-scrollbar {
   -o-transition: 4s;
   z-index: 5000;
 }
-.corals_area .coral_pink {
+.curtain_area .coral_pink {
   height: 55%;
   top: 0;
   left: -2%;
@@ -241,7 +264,7 @@ body::-webkit-scrollbar {
   -o-transition: 2s;
   z-index: 5000;
 }
-.corals_area .coral_purple {
+.curtain_area .coral_purple {
   height: 55%;
   top: -3%;
   left: 45%;
@@ -252,7 +275,7 @@ body::-webkit-scrollbar {
   -ms-transition: 3s;
   -o-transition: 3s;
   z-index: 5000;
-}
+} */
 
 .main_information_area {
   width: 100%;
