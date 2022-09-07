@@ -8,7 +8,7 @@ html, body {
   color: #92df92;
   text-align: center;
   scroll-behavior: smooth;
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -35,15 +35,20 @@ body::-webkit-scrollbar {
   z-index: 5500;
 }
 .main_area_header .head_img {
-  width: 250px;
+  /* background: #00b500; */
+  font-size: 5rem;
+  font-weight: bold;
+  color: #f2f2f2;
+  line-height: 1;
+  /* width: 250px; */
   position: absolute;
-  top: 0%;
+  top: 20%;
   left: 50%;
-  transform: translate(-55%);
-  -webkit-transform: translate(-55%);
-  -moz-transform: translate(-55%);
-  -ms-transform: translate(-55%);
-  -o-transform: translate(-55%);
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
 }
 .main_area_header .header_string {
   width: 400px;
