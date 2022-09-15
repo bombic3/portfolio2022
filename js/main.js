@@ -19,22 +19,18 @@ $(window).on("scroll",function(e){
     $(".curtain02").css({"margin-left": -$(this).scrollTop()});
     $(".curtain03").css({"margin-right": -$(this).scrollTop()});
     $(".main_index_area").css({"margin-right": -$(this).scrollTop()});
-    $(".coral_pink").css({"margin-left": $(this).scrollTop()});
-    $(".coral_purple").css({"margin-left": $(this).scrollTop()});
+    // $(".coral_pink").css({"margin-left": $(this).scrollTop()});
+    // $(".coral_purple").css({"margin-left": $(this).scrollTop()});
     //메인인포 위에서 아래로 효과(코드로 세상과 소통하는~~ + 이미지)
     // if($(this).scrollTop()<1000 && $(this).scrollTop()>600){
     if($(this).scrollTop()>550){
         // $(".main_information_menu_bar").css({"margin-top": "0","opacity":"1","transition":"0.5s"});
-        $(".main_information_string").css({"margin-top": "200px","opacity":"1","transition":"0.5s"});
+        // $(".main_information_string").css({"margin-top": "200px","opacity":"1","transition":"0.5s"});
         $(".main_information_img").css({"margin-top": "0", "opacity":"1","transition":"0.5s"});
     }else if($(this).scrollTop()<900){
         // $(".main_information_menu_bar").css({"margin-top": "0","opacity":"0","transition":"0.5s"});
-        $(".main_information_string").css({"opacity":"0"});
+        // $(".main_information_string").css({"opacity":"0"});
         $(".main_information_img").css({"opacity":"0"});
-    }
-    //메인인포 초록색 산호 움직이게
-    if($(this).scrollTop()>970){
-        $(".main_info_coral_box").css({"margin-left": -$(this).scrollTop()+970});
     }
     //백그라운드컬러 바뀌게 하는 효과
     if($(this).scrollTop()>550 && $(this).scrollTop()<1200){
