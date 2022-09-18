@@ -6,12 +6,12 @@ $(window).on("scroll",function(e){
     console.log(scroll_val); // 스크롤이 얼마나 내려가는지 확인
     // 메인캐릭터
     $("#im_bombi").css({"margin-top": $(this).scrollTop()-150, "opacity":"1","z-index":"7000"});
-    if($(this).scrollTop()>1050){
+    if($(this).scrollTop()>730){
         $("#im_bombi").css({"margin-top": $(this).scrollTop(), "opacity":"0", "z-index":"0"});
-    } else if($(this).scrollTop()<900 && $(this).scrollTop()>420){
+    } else if($(this).scrollTop()<830 && $(this).scrollTop()>350){
         //왼쪽으로 옮기기
         $("#im_bombi").css({"margin-left": -$(this).scrollTop()+400});
-    } else if($(this).scrollTop()<500){
+    } else if($(this).scrollTop()<350){
         $("#im_bombi").css({"margin-left": 0});
     }
     // 커튼
@@ -33,18 +33,13 @@ $(window).on("scroll",function(e){
         $(".main_information_img").css({"opacity":"0"});
     }
     //백그라운드컬러 바뀌게 하는 효과
-    if($(this).scrollTop()>550 && $(this).scrollTop()<1200){
-        $(".main_information_area").css({"background-color":"#333", "transition":"0.5s"})
-        $(".bg_level").css({"background-color":"aliceblue", "transition":"0.5s"})
-        $(".info_area").css({"background-color":"aliceblue", "transition":"0.5s"})
-        $(".send_message_box").css({"background-color":"aliceblue", "transition":"0.5s"})
-    }else if($(this).scrollTop()>=1200){
-        $(".main_information_area").css({"background-color":"#f5f5f5", "transition":"0.5s"})
+    if($(this).scrollTop()>660 && $(this).scrollTop()<1200){
+        $(".bg_level").css({"background-color":"#f5f5f5", "transition":"0.5s"})
+    }else if($(this).scrollTop()>=1700){
+        $(".main_area").css({"background-color":"#f5f5f5", "transition":"0.5s"})
         $(".bg_level").css({"background-color":"#f5f5f5", "transition":"0.3s"})
-        $(".info_area").css({"background-color":"#f5f5f5", "transition":"0.5s"})
-        $(".send_message_box").css({"background-color":"#f5f5f5", "transition":"0.5s"})
     } else{
-        $(".main_information_area").css({"background-color":"#333", "transition":"0.5s"})
+        $(".main_area").css({"background-color":"#333", "transition":"0.5s"})
         $(".bg_level").css({"background-color":"#333", "transition":"0.5s"})
     }
 
@@ -79,43 +74,30 @@ setTimeout(() => {
     // })
 }, 500);
 //CLICK하면 이동=====================================================================================
-$('.main_index_string').on("click",(e)=>{
-    switch(e.target.innerHTML){
-        case "HOME":
-            $(window).scrollTop(0);
-        break;
-        case "ABOUT ME":
-            $(window).scrollTop(2125);
-        break;
-        case "SKILLS":
-            $(window).scrollTop(2500);
-        break;
-        case "PORTFOLIO":
-            $(window).scrollTop(3422);
-        break;
-    }
-    console.log(e.target.innerHTML);
+$('.header_string').on("click",(e)=>{
+    $(window).scrollTop(551);
+    console(scrollTop);
 })
-$('.main_info_menu').on("click", (e)=>{
-    switch(e.target.innerHTML){
-        case "HOME":
-            $(window).scrollTop(0);
-        break;
-        case "ABOUT ME":
-            $(window).scrollTop(2125);
-        break;
-        case "SKILLS":
-            $(window).scrollTop(2500);
-        break;
-        case "PORTFOLIO":
-            $(window).scrollTop(3422);
-        break;
-    }
-})
+// $('.main_info_menu').on("click", (e)=>{
+//     switch(e.target.innerHTML){
+//         case "HOME":
+//             $(window).scrollTop(0);
+//         break;
+//         case "ABOUT ME":
+//             $(window).scrollTop(2125);
+//         break;
+//         case "SKILLS":
+//             $(window).scrollTop(2500);
+//         break;
+//         case "PORTFOLIO":
+//             $(window).scrollTop(3422);
+//         break;
+//     }
+// })
 $(document).on("click",(e)=>{
     switch(e.target.id){
         case "home_arrow":
-        $(window).scrollTop(1030);
+        $(window).scrollTop(551);
         break;
         case "move_up_btn":
         $(window).scrollTop(0);
@@ -270,157 +252,157 @@ $('button').on("click",(e)=>{
             }
             
     })
-     //포트폴리오 이름에 호버했을 때 폰트색상바뀌고 이미지 보여지게
-    $(".portfolio_subject").on("mouseover", (e)=>{
-        switch(e.target.innerHTML){
-            case "Let's KIRBY":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"110px","opacity":"1"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-                case "CAFE KIOSK":
-                    $(e.target).css({"color":"#000dc1"});
-                    $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                    $("#cafe_kiosk_box").css({"height":"110px","opacity":"1"});
-                    $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                    $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                    $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                    $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                    $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-            case "DETAIL PAGE":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"110px","opacity":"1"});
-                $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-            case "TULIP FESTIVAL":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                $("#tulip_festival_box").css({"height":"100px","opacity":"1"});
-                $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-            case "HAPPY DOLL POS":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                $("#happy_doll_pos_box").css({"height":"110px","opacity":"1"});
-                $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-            case "MATRIX CALCULATOR":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                $("#matrix_calculator_box").css({"height":"110px","opacity":"1"});
-                $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
-                break;
-            case "PHANTOM OF THE OPERA":
-                $(e.target).css({"color":"#000dc1"});
-                $("#kirby_story_box").css({"height":"0px","opacity":"0"});
-                $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
-                $("#detail_page_box").css({"height":"0px","opacity":"0"});
-                $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
-                $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
-                $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
-                $("#phantom_of_the_opera_box").css({"height":"110px","opacity":"1"});
-                break;
-            default:
-                $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
-                break;
-            }
-        })
-        //포트폴리오 설명 & 버튼영역에 마우스 올렸을 때
-        $(".portfolio_contents_box").on("mouseover", (e)=>{
-            console.log(e.target.className);
-            switch(e.target.className){
-                case  "kirby_story":
-                    $("#kirby_story_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "cafe_kiosk":
-                    $("#cafe_kiosk_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "detail_page":
-                    $("#detail_page_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "tulip_festival":
-                    $("#tulip_festival_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "happy_doll_pos":
-                    $("#happy_doll_pos_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "matrix_calculator":
-                    $("#matrix_calculator_box").css({"height":"110px","opacity":"1"});
-                break;
-                case  "phantom_of_the_opera":
-                    $("#phantom_of_the_opera_box").css({"height":"110px","opacity":"1"});
-                break;
-                default:
-                $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
-                break;
-            }
-        }) 
+//      //포트폴리오 이름에 호버했을 때 폰트색상바뀌고 이미지 보여지게
+//     $(".portfolio_subject").on("mouseover", (e)=>{
+//         switch(e.target.innerHTML){
+//             case "Let's KIRBY":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"110px","opacity":"1"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                 $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                 $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                 $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//                 case "CAFE KIOSK":
+//                     $(e.target).css({"color":"#000dc1"});
+//                     $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                     $("#cafe_kiosk_box").css({"height":"110px","opacity":"1"});
+//                     $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                     $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                     $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                     $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                     $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             case "DETAIL PAGE":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"110px","opacity":"1"});
+//                 $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                 $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                 $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             case "TULIP FESTIVAL":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                 $("#tulip_festival_box").css({"height":"100px","opacity":"1"});
+//                 $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                 $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             case "HAPPY DOLL POS":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                 $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                 $("#happy_doll_pos_box").css({"height":"110px","opacity":"1"});
+//                 $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             case "MATRIX CALCULATOR":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                 $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                 $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                 $("#matrix_calculator_box").css({"height":"110px","opacity":"1"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             case "PHANTOM OF THE OPERA":
+//                 $(e.target).css({"color":"#000dc1"});
+//                 $("#kirby_story_box").css({"height":"0px","opacity":"0"});
+//                 $("#cafe_kiosk_box").css({"height":"0px","opacity":"0"});
+//                 $("#detail_page_box").css({"height":"0px","opacity":"0"});
+//                 $("#tulip_festival_box").css({"height":"0px","opacity":"0"});
+//                 $("#happy_doll_pos_box").css({"height":"0px","opacity":"0"});
+//                 $("#matrix_calculator_box").css({"height":"0px","opacity":"0"});
+//                 $("#phantom_of_the_opera_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//             default:
+//                 $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             }
+//         })
+//         //포트폴리오 설명 & 버튼영역에 마우스 올렸을 때
+//         $(".portfolio_contents_box").on("mouseover", (e)=>{
+//             console.log(e.target.className);
+//             switch(e.target.className){
+//                 case  "kirby_story":
+//                     $("#kirby_story_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "cafe_kiosk":
+//                     $("#cafe_kiosk_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "detail_page":
+//                     $("#detail_page_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "tulip_festival":
+//                     $("#tulip_festival_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "happy_doll_pos":
+//                     $("#happy_doll_pos_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "matrix_calculator":
+//                     $("#matrix_calculator_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 case  "phantom_of_the_opera":
+//                     $("#phantom_of_the_opera_box").css({"height":"110px","opacity":"1"});
+//                 break;
+//                 default:
+//                 $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             }
+//         }) 
 
-        $(".portfolio_subject").on("mouseleave",(e)=>{
-            switch(e.target.innerHTML){
-                case "Let's KIRBY":
-                $(e.target).css({"color":"#000330"});
-                $("#kirby_story_box").css({"height":"0","opacity":"0"});
-                break;
-                case "CAFE KIOSK":
-                    $(e.target).css({"color":"#000330"});
-                    $("#cafe_kiosk_box").css({"height":"0","opacity":"0"});
-                break;
-            case "DETAIL PAGE":
-                $(e.target).css({"color":"#000330"});
-                $("#detail_page_box").css({"height":"0","opacity":"0"});
-                break;
-            case "TULIP FESTIVAL":
-                $(e.target).css({"color":"#000330"});
-                $("#tulip_festival_box").css({"height":"0","opacity":"0"});
-                break;
-            case "HAPPY DOLL POS":
-                $(e.target).css({"color":"#000330"});
-                $("#happy_doll_pos_box").css({"height":"0","opacity":"0"});
-                break;
-            case "MATRIX CALCULATOR":
-                $(e.target).css({"color":"#000330"});
-                $("#matrix_calculator_box").css({"height":"0","opacity":"0"});
-                break;
-            case "PHANTOM OF THE OPERA":
-                $(e.target).css({"color":"#000330"});
-                $("#phantom_of_the_opera_box").css({"height":"0","opacity":"0"});
-                break;
-            default:
-                $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
-                break;
-            }
-        })
-        $(".portfolio_subject").on("mouseleave",()=>{
-            $(".portfolio_img").css("opacity","0");
-        })
-        //click to go 돌아가게
-        let deg_counter = 0;
-        setInterval(() => {
-            deg_counter++;
-            $(".click_to_go_circle").css({"transform":"rotate("+deg_counter +"deg)"})
-        }, 80);
+//         $(".portfolio_subject").on("mouseleave",(e)=>{
+//             switch(e.target.innerHTML){
+//                 case "Let's KIRBY":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#kirby_story_box").css({"height":"0","opacity":"0"});
+//                 break;
+//                 case "CAFE KIOSK":
+//                     $(e.target).css({"color":"#000330"});
+//                     $("#cafe_kiosk_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             case "DETAIL PAGE":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#detail_page_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             case "TULIP FESTIVAL":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#tulip_festival_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             case "HAPPY DOLL POS":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#happy_doll_pos_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             case "MATRIX CALCULATOR":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#matrix_calculator_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             case "PHANTOM OF THE OPERA":
+//                 $(e.target).css({"color":"#000330"});
+//                 $("#phantom_of_the_opera_box").css({"height":"0","opacity":"0"});
+//                 break;
+//             default:
+//                 $(".portfolio_contents_box").css({"height":"0px","opacity":"0"});
+//                 break;
+//             }
+//         })
+//         $(".portfolio_subject").on("mouseleave",()=>{
+//             $(".portfolio_img").css("opacity","0");
+//         })
+//         //click to go 돌아가게
+//         let deg_counter = 0;
+//         setInterval(() => {
+//             deg_counter++;
+//             $(".click_to_go_circle").css({"transform":"rotate("+deg_counter +"deg)"})
+//         }, 80);
 })
